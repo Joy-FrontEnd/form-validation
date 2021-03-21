@@ -17,36 +17,41 @@
 
 <body>
   <main>
-    <form action="/about.html" class="form-control" id="form">
+    <form action="/" id="form" class="form">
       <div>
         <h1>Create Account</h1>
         <p>It's free and hardly takes more than 30 seconds</p>
       </div>
-      <div>
-        <label for="username"></label>
-        <i class="fa fa-user"></i>
-        <input type="text" name="username" placeholder="Username" id="user-name">
-        <small id="error">Username can not be empty</small>
 
+      <div class=" form-control">
+        <label for="username"></label>
+        <i class="fa fa-user" id="icon"></i>
+        <input type="text" name="username" placeholder="Username" id="user-name">
+
+        <small id="error"></small>
       </div>
-      <div>
+
+      <div class="form-control">
         <label for="email"></label>
         <i class="fa fa-paper-plane"></i>
         <input type="text" placeholder="Email Address" id="email">
-        <small>Email address can not be empty</small>
+        <small id="error"></small>
+
       </div>
-      <div>
+
+      <div class="form-control">
         <label for="password"></label>
         <i class="fas fa-lock"></i>
         <input type="password" placeholder="Password" id="my-password1">
         <input type="checkbox" onclick="showPassword(); matchPassword()" class="show-password">Show Password
-        <small>Password can not be empty</small>
+        <small id="error"></small>
       </div>
-      <div>
+
+      <div class="form-control">
         <label for="password"></label>
         <i class="fas fa-shield-alt"></i>
         <input type="password" id="my-password2" placeholder="Confirm Password">
-        <small>Error</small>
+        <small id="error"></small>
       </div>
       <div class="policy">
         <button type="submit">Sign Up</button>

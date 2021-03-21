@@ -13,37 +13,40 @@ body{
 #form{
   border: 1px solid rgb(216, 214, 214);;
   width: 40%;
+  margin: 50px auto;
   
 }
 .form-control small {
-  position: absolute;
-  margin: 0.5em;
-  color: black;
-  visibility: hidden;
+  display: flex;
+  color: black; 
 }
 
+.policy p{
+  padding-left: 20px;
+  padding-right: 20px;
+}
 .form-control{
-display: flex;
-flex-direction: column;
-width: 40%;
+width: 100%;
 margin: 50px auto;
 padding: 20px;
 }
 
+
 .form-control input{
   width: 80%;
-  margin: 0 auto;
-  padding: 20px;
   margin-bottom: 20px;
+  padding: 5px;
   border: 1px solid rgb(216, 214, 214);
   border-top: none;
   border-left: none;
   border-right: none;
   color: grey;
 }
+
 .form-control.success input {
   border: 2px solid rgb(75, 126, 75);
 }
+
 
 .form-control.error input {
   border: 2px solid rgb(196, 18, 18);
@@ -71,15 +74,36 @@ display: flex;
 
 @media (max-width: 375px) {
   #form{
-width: 80%;
+width: 100%;
+margin: 0 auto;
   }
    
+     
+  .form-control input{
+    width: 80%;
+   
+
+  }
 }
 
-@media (max-width: 600px) {
+
+@media (max-width: 450px) {
   #form{
-width: 80%;
+width: 100%;
   }
    
+  .form-control input{
+    width: 80%;
+  }
+
+  
+@media (max-width: 600px) {
+  #form{
+width: 100%;
+  }
+   
+  .form-control input{
+    width: 80%;
+  }
 }
 

@@ -3,71 +3,69 @@ let userName = document.getElementById('user-name')
 let email = document.getElementById('email')
 let password = document.getElementById('my-password1')
 let confirmPassword = document.getElementById('my-password2')
-let errorElement = document.getElementById('error')
-
-
-function accountCreated() {
-  //user name
-  if (userName.value.trim() === "") {
-    onError(userName, "Username cannot be empty");
-
-
-  } else {
-    onSuccess(userName);
-  }
-
-  //email
-  if (email.value.trim() === "") {
-    onError(email, "Email address can not be empty")
-
-
-  } else {
-    if (!isValidEmail(email.value.trim())) {
-      onError(email, "Email is not valid")
-
-
-    } else {
-      onSuccess(email);
-
-    }
-  }
-  //password
-
-  if (password.value.trim() === "") {
-    onError(password, "Password can not be empty");
-
-
-  } else {
-    onSuccess(password);
-  }
-
-  //confirm password
-
-  if (password.value.trim() != confirmPassword.value.trim()) {
-    alert("Passwords did not match");
-  }
-
-}
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   accountCreated();
 });
 
-function onSuccess(input) {
-  let parent = input.parentElement;
-  let messageElement = parent.querySelector("small");
-  messageElement.style.visibility = "hidden";
-  messageElement.innerText = " ";
-  window.location.href = "about.html";
+
+function accountCreated() {
+
+  //user name
+  let userNameValue = userName.value.trim();
+  if (userNameValue === "") {
+    onError(userName, "Please enter your Username")
+  } else {
+    onSuccess(userName)
+  }
+  //email
+
+  let emailValue = email.value.trim();
+  if (emailValue === "") {
+    onError(email, "Please enter your email");
+  } else if (!isValidEmail(emailValue)) {
+    onError(email, 'Email is invalid');
+
+  } else {
+    onSuccess(email)
+  }
+  //password
+
+  let passwordValue = password.value.trim();
+  if (passwordValue === "") {
+    onError(password, "Please enter your password")
+  } else {
+    onSuccess(password)
+  }
+
+  //confirm password
+
+  let confirmPasswordValue = confirmPassword.value.trim();
+  if (confirmPasswordValue === "") {
+    onError(confirmPassword, "Please confirm your password")
+  } else if (passwordValue != confirmPasswordValue) {
+    onError(confirmPassword, "Password does not match");
+  } else {
+    onSuccess(confirmPassword)
+  }
 }
 
-function onError(input) {
-  let parent = input.parentElement;
-  let messageElement = parent.querySelector("small");
-  messageElement.style.visibility = "visible";
-  messageElement.innerText = message;
+function onError(input, message) {
+  let formControl = input.parentElement
+  let small = formControl.querySelector("small")
+  small.innerText = message;
+  formControl.className = 'form-control error'
+
 }
+
+function onSuccess(input) {
+  let formControl = input.parentElement
+  formControl.className = 'form-control success'
+
+}
+
+
 
 function isValidEmail(email) {
   return /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email);
