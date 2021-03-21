@@ -72,9 +72,8 @@ function isValidEmail(email) {
 }
 
 
-
 function showPassword() {
-  var x = document.getElementById("my-password1");
+  let x = document.getElementById("my-password1");
   if (x.type === "password") {
     x.type = "text";
   } else {
