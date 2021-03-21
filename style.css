@@ -10,13 +10,19 @@ body{
   
 }
 
-form{
+#form{
   border: 1px solid rgb(216, 214, 214);;
-  width: 100%;
+  width: 40%;
   
 }
+.form-control small {
+  position: absolute;
+  margin: 0.5em;
+  color: black;
+  visibility: hidden;
+}
 
-#form-control{
+.form-control{
 display: flex;
 flex-direction: column;
 width: 40%;
@@ -24,7 +30,7 @@ margin: 50px auto;
 padding: 20px;
 }
 
-#form-control input{
+.form-control input{
   width: 80%;
   margin: 0 auto;
   padding: 20px;
@@ -34,6 +40,13 @@ padding: 20px;
   border-left: none;
   border-right: none;
   color: grey;
+}
+.form-control.success input {
+  border: 2px solid rgb(75, 126, 75);
+}
+
+.form-control.error input {
+  border: 2px solid rgb(196, 18, 18);
 }
 
 button{
@@ -51,6 +64,22 @@ button{
   width: 80%;
 }
 
+.show-password{
+display: flex;
 
+}
 
+@media (max-width: 375px) {
+  #form{
+width: 80%;
+  }
+   
+}
+
+@media (max-width: 600px) {
+  #form{
+width: 80%;
+  }
+   
+}
 

@@ -17,7 +17,7 @@
 
 <body>
   <main>
-    <form action="/action_page.php" id="form-control">
+    <form action="/about.html" class="form-control" id="form">
       <div>
         <h1>Create Account</h1>
         <p>It's free and hardly takes more than 30 seconds</p>
@@ -25,26 +25,31 @@
       <div>
         <label for="username"></label>
         <i class="fa fa-user"></i>
-        <input type="text" name="username" placeholder="Username">
+        <input type="text" name="username" placeholder="Username" id="user-name">
+        <small id="error">Username can not be empty</small>
+
       </div>
       <div>
         <label for="email"></label>
         <i class="fa fa-paper-plane"></i>
-        <input type="text" name="name" placeholder="Email Address">
+        <input type="text" placeholder="Email Address" id="email">
+        <small>Email address can not be empty</small>
       </div>
       <div>
         <label for="password"></label>
         <i class="fas fa-lock"></i>
-        <input type="text" name="password" placeholder="Password">
-        <input type="checkbox" id="password">Show Password
+        <input type="password" placeholder="Password" id="my-password1">
+        <input type="checkbox" onclick="showPassword(); matchPassword()" class="show-password">Show Password
+        <small>Password can not be empty</small>
       </div>
       <div>
         <label for="password"></label>
         <i class="fas fa-shield-alt"></i>
-        <input type="text" name="confirm-password" placeholder="Confirm Password">
+        <input type="password" id="my-password2" placeholder="Confirm Password">
+        <small>Error</small>
       </div>
       <div class="policy">
-        <button>Sign Up</button>
+        <button type="submit">Sign Up</button>
         <p>By clicking the our Sign Up button you're agreeing to our <a href="#" target="_blank">Terms & Conditions</a>
           and <a href="#" target="_blank">Privacy
             Policy.</a> </p>
